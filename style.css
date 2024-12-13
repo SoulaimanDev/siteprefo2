@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
 }
-
 body {
   background: linear-gradient(#01012e, #240019);
   height: 100%;
@@ -16,17 +15,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-ul {
-text-align: center;
-}
-
-ul:hover li a {
-  opacity: 0;
-}
-ul li {
-  list-style: none;
-  margin: 30px 10px;
 }
 ul li a {
   color: #fff;
@@ -42,11 +30,22 @@ ul li a {
   width: 150px;
   transition: 0.5s;
 }
-ul li a:hover {
 
- transform: scale(1.5);
+ul:hover li a {
+  opacity: 0;
+}
+
+ul li a:hover {
+  transform: scale(1.5);
   background: darkmagenta;
   opacity: 1;
+}
+ul li {
+  list-style: none;
+  margin: 30px 10px;
+}
+ul {
+  text-align: center;
 }
 
 header {
@@ -55,22 +54,9 @@ header {
   justify-content: center;
   align-items: center;
   list-style: none;
- 
 }
 
-header ul li {
-  margin-left: 30px;
-}
 
-h4 {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #fff;
-  opacity: 0.8;
-  margin-top: 200px;
-  margin-bottom: 200px;
-  font-family: Lexend;
-}
 
 h1 {
   text-align: center;
@@ -80,9 +66,29 @@ h1 {
   margin-top: 32px;
   margin-bottom: 32px;
   text-transform: uppercase;
-  animation: bounce 2s  ease infinite;
+  animation: bounce 2s ease infinite;
 }
-
+h3 {
+  font-size: 1.5em;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: darkmagenta;
+  border-radius: 50px;
+  padding: 20px;
+  animation: ani-left 2s;
+}
+h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  font-family: Lexend;
+}
 p {
   color: #ffff;
   text-align: justify;
@@ -96,23 +102,9 @@ p {
   background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.8);
   border-radius: 30px;
-  animation: ani-right;
-  animation-duration: 2s;
-  
+  animation: ani-right 2s;
 }
-h3 {
-  font-size: 1.5em;
-  width: 50%;
-  margin-left: 10%;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: darkmagenta;
-  border-radius: 50px;
-  padding: 20px;
-  animation: ani-left;
-animation-duration: 2s;
-}
+
 .partie {
   display: flex;
   justify-content: space-between;
@@ -133,18 +125,15 @@ animation-duration: 2s;
 .left {
   animation: ani-left;
   animation-duration: 2s;
-
 }
-.right{
+.right {
   animation: ani-right;
   animation-duration: 2s;
-
 }
 .ani {
-	backface-visibility: visible !important;
-	animation: flip 2s ;
+  backface-visibility: visible !important;
+  animation: flip 2s ;
 }
-
 
 @keyframes ani-left {
   0% {
@@ -155,10 +144,13 @@ animation-duration: 2s;
     opacity: 1;
     transform: translateX(-30px);
   }
-  80% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-
 
 @keyframes ani-right {
   0% {
@@ -169,35 +161,45 @@ animation-duration: 2s;
     opacity: 1;
     transform: translateX(-30px);
   }
-  80% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-30px);}
-	60% {transform: translateY(-15px);}
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes flip {
-	0% {
-		transform: perspective(400px) rotateY(0);
-		animation-timing-function: ease-out;
-	}
-	40% {
-		transform: perspective(400px) translateZ(150px) rotateY(170deg);
-		animation-timing-function: ease-out;
-	}
-	50% {
-		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
-		animation-timing-function: ease-in;
-	}
-	80% {
-		transform: perspective(400px) rotateY(360deg) scale(.95);
-		animation-timing-function: ease-in;
-	}
-	100% {
-		transform: perspective(400px) scale(1);
-		animation-timing-function: ease-in;
-	}
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in;
+  }
 }
